@@ -1,0 +1,10 @@
+[package]
+name = "gopher-core"
+version = "0.1.0"
+edition = "2021"
+description = "Daemon-agnostic gopher mechanics: the menu model, the geomyidae .gph serializer, and atomic file-publish primitives. Shared by gopher-cta and gopher-blog."
+license = "MIT"
+
+# Deliberately std-only — no serde, no external deps. This is the menu model, the
+# .gph serializer, and the snapshot/flip/gc publish primitives. Nothing else.
+[dependencies]
