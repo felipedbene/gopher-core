@@ -8,10 +8,11 @@
 /// [`render_menu_index`].
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum ItemKind {
-    Text, // gopher type 0
-    Menu, // gopher type 1
-    Url,  // gopher type h -- external link, selector is `URL:<addr>`
-    Bin,  // gopher type 9 -- binary download
+    Text,   // gopher type 0
+    Menu,   // gopher type 1
+    Search, // gopher type 7 -- index-search server; client prompts, re-sends `selector\tquery`
+    Url,    // gopher type h -- external link, selector is `URL:<addr>`
+    Bin,    // gopher type 9 -- binary download
 }
 
 /// One line of a menu: either an info line (not selectable) or a link.
@@ -105,6 +106,7 @@ pub fn render_menu_index(entries: &[Entry]) -> String {
                 let t = match kind {
                     ItemKind::Text => '0',
                     ItemKind::Menu => '1',
+                    ItemKind::Search => '7',
                     ItemKind::Url => 'h',
                     ItemKind::Bin => '9',
                 };
@@ -153,6 +155,13 @@ mod tests {
         assert!(gph.contains("[0|About|/about.txt|server|port]\n"));
         assert!(gph.contains("[1|Live CTA trains|/|gopher.debene.dev|70]\n"));
         assert!(!gph.contains('\t'));
+    }
+
+    #[test]
+    fn search_item_renders_type_7() {
+        // A type-7 index-search item (e.g. a dcgi the client sends a query to).
+        let gph = render_menu_index(&[link(ItemKind::Search, "Ask the deck", "/draw.dcgi")]);
+        assert_eq!(gph, "[7|Ask the deck|/draw.dcgi|server|port]\n");
     }
 
     #[test]

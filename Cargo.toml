@@ -1,6 +1,6 @@
 [package]
 name = "gopher-core"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 description = "Daemon-agnostic gopher mechanics: the menu model, the geomyidae .gph serializer, and atomic file-publish primitives. Shared by gopher-cta and gopher-blog."
 license = "MIT"
