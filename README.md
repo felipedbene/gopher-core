@@ -10,6 +10,8 @@ Deliberately tiny and **std-only** — no serde, no external deps:
 
 - **Menu model** — `Entry` / `ItemKind` and the `info` / `link` builders;
   `Entry::with_host` stamps a concrete host/port on a cross-server link.
+  `ItemKind` covers `Text` (0), `Menu` (1), `Search` (7, index-search),
+  `Url` (h, external link) and `Bin` (9, binary download).
 - **Serializer** — `render_menu_index`: an `Entry` list -> a geomyidae `.gph`
   index. (Targeting another daemon = rewrite only this.)
 - **Publish primitives** — `new_snapshot` (`out-<ts>/`), `write_files`,
@@ -19,7 +21,7 @@ Deliberately tiny and **std-only** — no serde, no external deps:
 ## Use
 
 ```toml
-gopher-core = { git = "https://github.com/felipedbene/gopher-core", tag = "v0.1.0" }
+gopher-core = { git = "https://github.com/felipedbene/gopher-core", tag = "v0.2.0" }
 ```
 
 ```rust
