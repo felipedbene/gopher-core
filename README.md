@@ -1,5 +1,7 @@
 # gopher-core
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) ![Rust](https://img.shields.io/badge/Rust-std--only-orange.svg)
+
 The daemon-agnostic gopher mechanics shared by
 [`gopher-cta`](https://github.com/felipedbene/gopher-cta) (live CTA trains over
 gopher) and [`gopher-blog`](https://github.com/felipedbene/gopher-blog) (the
@@ -41,4 +43,11 @@ auto-propagates into a live build.
 
 ## License
 
-MIT.
+MIT — see [LICENSE](LICENSE).
+
+---
+### Part of the gopher constellation
+**Servers & tools:** [gopher-core](https://github.com/felipedbene/gopher-core) · [gopher-cta](https://github.com/felipedbene/gopher-cta) · [gopher-blog](https://github.com/felipedbene/gopher-blog) · [gopher-askthedeck](https://github.com/felipedbene/gopher-askthedeck) · [gopher-spot](https://github.com/felipedbene/gopher-spot) · [the-economist-epub](https://github.com/felipedbene/the-economist-epub)
+**Clients:** [casquinha](https://github.com/felipedbene/casquinha) (Mac OS 9) · [detoca](https://github.com/felipedbene/detoca) (OS X 10.6) · [degelato](https://github.com/felipedbene/degelato) (OS X 10.5 PPC) · [deburrow](https://github.com/felipedbene/deburrow) (Android)
+**Protocol notes:** [fhb](https://github.com/felipedbene/fhb)
+---
